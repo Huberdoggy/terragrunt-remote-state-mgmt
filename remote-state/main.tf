@@ -10,9 +10,12 @@ resource "aws_s3_bucket" "terra_state" {
     enabled = true // Best practices, updating file in bucket creates new version. Sort of like Git
   }
 
+  force_destroy = true // Force removal of all files/versions from bucket to prevent errors when I'm done
+  /*
   lifecycle { // setting this will cause 'terraform destroy' to error
   prevent_destroy = true
   }
+  */
 }
 
   

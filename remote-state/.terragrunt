@@ -1,0 +1,19 @@
+# Config so that Terragrunt wrapper uses DynamoDB for version locking
+
+lock = {
+    backend = "dynamodb"
+    config {
+        state_file_id = "s3-test"
+    }
+}
+
+# Config TG to automatically store tfstate files in S3 - just like the Terraform remote config commands
+remote_state = {
+    backend = "s3"
+    config {
+        encrypt = "true"
+        bucket = "huberdoggy-s3-bucket"
+        key = "./terraform.tfstate"
+        region = "us-east-1"
+    }
+}
