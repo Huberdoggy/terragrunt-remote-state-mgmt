@@ -1,0 +1,8 @@
+/**/.terraform/
+/**/terraform.tfstate
+/**/terraform.tfstate.*backup
+/**/terraform.tfvars
+/**/.vscode
+
+# Sensitive stuff in legacy backend config
+/legacy-s3*

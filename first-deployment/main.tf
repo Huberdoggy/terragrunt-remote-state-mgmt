@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 1.2.5, < 2.0.0"
+}
+
 provider "aws" {
   region  = var.aws_region
   profile = "development"
