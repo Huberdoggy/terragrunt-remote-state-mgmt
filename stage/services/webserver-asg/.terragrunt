@@ -3,7 +3,7 @@
 lock = {
     backend = "dynamodb"
     config {
-        state_file_id = "s3-test"
+        state_file_id = "stage/services/webserver-asg"
     }
 }
 
@@ -13,7 +13,7 @@ remote_state = {
     config {
         encrypt = "true"
         bucket = "huberdoggy-s3-bucket"
-        key = "./terraform.tfstate"
+        key = "stage/services/webserver-asg/terraform.tfstate"
         region = "us-east-1"
     }
 }
